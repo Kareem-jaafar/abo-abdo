@@ -1,9 +1,23 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-  <!-- Event snippet for جهة اتصال conversion page -->
+  <!-- Event snippet for انقر للاتصال (9) conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
 <script>
-  gtag('event', 'conversion', {'send_to': 'AW-18576531962/ffNkCPiqi7sdEPrD_ZlF'});
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-18576531962/oOB6CJWIlbsdEPrD_ZlF',
+      'value': 1.0,
+      'currency': 'EGP',
+      'event_callback': callback
+  });
+  return false;
+}
 </script>
 
 <!-- Google Tag Manager -->
